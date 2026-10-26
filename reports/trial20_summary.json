@@ -1,0 +1,167 @@
+{
+  "overall": {
+    "faithfulness": {
+      "mean": 0.975,
+      "ci95": [
+        0.925,
+        1.0
+      ],
+      "n": 20
+    },
+    "answer_relevancy": {
+      "mean": 0.9039,
+      "ci95": [
+        0.7983,
+        0.9679
+      ],
+      "n": 20
+    },
+    "context_precision": {
+      "mean": 0.8917,
+      "ci95": [
+        0.7583,
+        1.0
+      ],
+      "n": 20
+    },
+    "context_recall": {
+      "mean": 0.95,
+      "ci95": [
+        0.85,
+        1.0
+      ],
+      "n": 20
+    },
+    "answer_correctness": {
+      "mean": 0.9,
+      "ci95": [
+        0.75,
+        1.0
+      ],
+      "n": 20
+    },
+    "hit_rate": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "n": 20
+    },
+    "evidence_recall": {
+      "mean": 0.95,
+      "ci95": [
+        0.85,
+        1.0
+      ],
+      "n": 20
+    },
+    "mrr": {
+      "mean": 0.95,
+      "ci95": [
+        0.875,
+        1.0
+      ],
+      "n": 20
+    },
+    "pii_leak": {
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "n": 20
+    }
+  },
+  "by_category": {
+    "single_fact": {
+      "faithfulness": {
+        "mean": 0.975,
+        "ci95": [
+          0.925,
+          1.0
+        ],
+        "n": 20
+      },
+      "answer_relevancy": {
+        "mean": 0.9039,
+        "ci95": [
+          0.7983,
+          0.9679
+        ],
+        "n": 20
+      },
+      "context_precision": {
+        "mean": 0.8917,
+        "ci95": [
+          0.7583,
+          1.0
+        ],
+        "n": 20
+      },
+      "context_recall": {
+        "mean": 0.95,
+        "ci95": [
+          0.85,
+          1.0
+        ],
+        "n": 20
+      },
+      "answer_correctness": {
+        "mean": 0.9,
+        "ci95": [
+          0.75,
+          1.0
+        ],
+        "n": 20
+      },
+      "hit_rate": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n": 20
+      },
+      "evidence_recall": {
+        "mean": 0.95,
+        "ci95": [
+          0.85,
+          1.0
+        ],
+        "n": 20
+      },
+      "mrr": {
+        "mean": 0.95,
+        "ci95": [
+          0.875,
+          1.0
+        ],
+        "n": 20
+      },
+      "pii_leak": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n": 20
+      }
+    }
+  },
+  "run": {
+    "run_id": "trial20",
+    "config": {
+      "name": "baseline",
+      "collection": "banking_baseline",
+      "k": 4,
+      "model": "openai/gpt-oss-120b",
+      "prompt_label": "baseline-v1",
+      "show_version_metadata": true,
+      "retrieval": "dense"
+    },
+    "split": "all",
+    "judge_model": "gemini-flash-lite-latest",
+    "n": 20
+  }
+}

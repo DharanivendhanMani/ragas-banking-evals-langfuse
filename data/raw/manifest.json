@@ -1,0 +1,17 @@
+[
+  {"doc_id": "account_terms", "file": "account_terms.md", "title": "Deposit Account Terms and Conditions", "version": "3.0", "effective_date": "2024-01-01", "doc_group": "account_terms", "status": "current", "messy": false},
+  {"doc_id": "card_dispute_policy", "file": "card_dispute_policy.md", "title": "Card Dispute and Unauthorized Transaction Policy", "version": "2.1", "effective_date": "2024-01-01", "doc_group": "card_dispute", "status": "current", "messy": false},
+  {"doc_id": "loan_eligibility", "file": "loan_eligibility.md", "title": "Loan Eligibility Guide", "version": "1.4", "effective_date": "2024-02-01", "doc_group": "loans", "status": "current", "messy": false},
+  {"doc_id": "kyc_requirements", "file": "kyc_requirements.md", "title": "Identity Verification (KYC) Requirements", "version": "2.0", "effective_date": "2024-01-01", "doc_group": "kyc", "status": "current", "messy": false},
+  {"doc_id": "wire_transfer_rules", "file": "wire_transfer_rules.md", "title": "Wire Transfer Rules", "version": "1.6", "effective_date": "2024-03-01", "doc_group": "wires", "status": "current", "messy": false},
+  {"doc_id": "fraud_faq", "file": "fraud_faq.md", "title": "Fraud Prevention FAQ", "version": "1.2", "effective_date": "2024-01-15", "doc_group": "fraud", "status": "current", "messy": false},
+  {"doc_id": "savings_cd_rates", "file": "savings_cd_rates.md", "title": "Savings and CD Rates", "version": "2024-07", "effective_date": "2024-07-01", "doc_group": "rates", "status": "current", "messy": false},
+  {"doc_id": "overdraft_policy", "file": "overdraft_policy.md", "title": "Overdraft and NSF Policy", "version": "2.2", "effective_date": "2024-03-01", "doc_group": "overdraft", "status": "current", "messy": false},
+
+  {"doc_id": "fee_schedule_2024", "file": "fee_schedule_2024.pdf", "title": "Personal Fee Schedule", "version": "2024.1", "effective_date": "2024-03-01", "doc_group": "fees", "status": "current", "messy": true, "messiness": "table_heavy_pdf"},
+  {"doc_id": "atm_policy_v2023", "file": "atm_policy_v2023.md", "title": "ATM and Debit Card Usage Policy (v1.0)", "version": "1.0", "effective_date": "2023-01-01", "doc_group": "atm_policy", "status": "superseded", "messy": true, "messiness": "outdated_version"},
+  {"doc_id": "atm_policy_v2024", "file": "atm_policy_v2024.md", "title": "ATM and Debit Card Usage Policy (v2.0)", "version": "2.0", "effective_date": "2024-03-01", "doc_group": "atm_policy", "status": "current", "messy": true, "messiness": "conflicts_with_older_version"},
+  {"doc_id": "chargeback_guide", "file": "chargeback_guide.md", "title": "Merchant Chargeback Guide", "version": "1.1", "effective_date": "2024-01-01", "doc_group": "chargebacks", "status": "current", "messy": true, "messiness": "internal_contradiction"},
+  {"doc_id": "branch_operations_notice", "file": "branch_operations_notice.pdf", "title": "Branch Hours and Services Bulletin", "version": "BO-2024-07", "effective_date": "2024-07-01", "doc_group": "branches", "status": "current", "messy": true, "messiness": "pdf_layout_noise"},
+  {"doc_id": "customer_faq", "file": "customer_faq.md", "title": "Customer FAQ", "version": "unversioned", "effective_date": null, "doc_group": "faq", "status": "current", "messy": true, "messiness": "near_duplicates_with_inconsistencies"}
+]
