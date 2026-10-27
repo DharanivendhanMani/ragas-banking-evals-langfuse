@@ -13,9 +13,9 @@ import re
 import threading
 import time
 from dataclasses import asdict, dataclass
-from functools import lru_cache
 
 import chromadb
+from openai import APIConnectionError, APITimeoutError, InternalServerError, RateLimitError
 from langfuse import propagate_attributes
 
 from src import config
@@ -28,19 +28,15 @@ langfuse = init_langfuse()
 
 @dataclass(frozen=True)
 class RAGConfig:
-    """Everything an experiment can vary. The default is the baseline."""
+    """RAG settings. The default is the baseline."""
     name: str = "baseline"
     collection: str = config.COLLECTION
     k: int = config.TOP_K
     model: str = config.GROQ_MODEL
     prompt_label: str = "baseline-v1"
-    show_version_metadata: bool = True   # include version/date/status in the context headers
-    retrieval: str = "dense"             # "dense" or "hybrid" (BM25 + dense fused with reciprocal rank fusion)
 
 
 BASELINE = RAGConfig()
-HYBRID_POOL = 10   # candidates taken from each retriever before fusion
-RRF_K = 60
 
 
 _chroma_lock = threading.Lock()
@@ -60,34 +56,10 @@ def _collection(name: str):
         return _collections[name]
 
 
-@lru_cache(maxsize=None)
-def _bm25_index(collection: str):
-    """BM25 index over every chunk in the collection (built once per process)."""
-    from rank_bm25 import BM25Okapi
-    data = _collection(collection).get(include=["documents", "metadatas"])
-    tokens = [re.findall(r"\w+", doc.lower()) for doc in data["documents"]]
-    return BM25Okapi(tokens), data["ids"], data["documents"], data["metadatas"]
-
-
-def _hybrid_hits(question: str, dense_hits: list[dict], cfg: RAGConfig) -> list[dict]:
-    bm25, ids, docs, metas = _bm25_index(cfg.collection)
-    scores = bm25.get_scores(re.findall(r"\w+", question.lower()))
-    bm25_rank = sorted(range(len(ids)), key=lambda i: scores[i], reverse=True)[:HYBRID_POOL]
-    fused: dict[str, float] = {}
-    by_id = {h["id"]: h for h in dense_hits}
-    for rank, h in enumerate(dense_hits):
-        fused[h["id"]] = fused.get(h["id"], 0) + 1 / (RRF_K + rank + 1)
-    for rank, i in enumerate(bm25_rank):
-        fused[ids[i]] = fused.get(ids[i], 0) + 1 / (RRF_K + rank + 1)
-        by_id.setdefault(ids[i], {"id": ids[i], "text": docs[i], "metadata": metas[i], "distance": None})
-    top = sorted(fused, key=fused.get, reverse=True)[:cfg.k]
-    return [by_id[cid] for cid in top]
-
-
 def retrieve(question: str, cfg: RAGConfig) -> list[dict]:
     with langfuse.start_as_current_observation(
         as_type="retriever", name="retrieve-context", input=question,
-        metadata={"collection": cfg.collection, "k": str(cfg.k), "retrieval": cfg.retrieval},
+        metadata={"collection": cfg.collection, "k": str(cfg.k)},
     ) as span:
         with langfuse.start_as_current_observation(
             as_type="embedding", name="embed-query", model=config.EMBEDDING_MODEL, input=question,
@@ -96,14 +68,11 @@ def retrieve(question: str, cfg: RAGConfig) -> list[dict]:
             vec = resp.data[0].embedding
             emb.update(output={"dimensions": len(vec)},
                        usage_details={"input": resp.usage.prompt_tokens} if resp.usage else None)
-        n_dense = HYBRID_POOL if cfg.retrieval == "hybrid" else cfg.k
-        res = _collection(cfg.collection).query(query_embeddings=[vec], n_results=n_dense)
+        res = _collection(cfg.collection).query(query_embeddings=[vec], n_results=cfg.k)
         hits = [
             {"id": cid, "text": doc, "metadata": meta, "distance": round(dist, 4)}
             for cid, doc, meta, dist in zip(res["ids"][0], res["documents"][0], res["metadatas"][0], res["distances"][0])
         ]
-        if cfg.retrieval == "hybrid":
-            hits = _hybrid_hits(question, hits, cfg)
         span.update(output=[
             {"chunk_id": h["id"], "version": h["metadata"]["version"], "status": h["metadata"]["status"],
              "distance": h["distance"], "text": h["text"]} for h in hits
@@ -115,10 +84,7 @@ def build_prompt(question: str, hits: list[dict], cfg: RAGConfig) -> str:
     blocks = []
     for i, h in enumerate(hits, 1):
         m = h["metadata"]
-        if cfg.show_version_metadata:
-            header = f"[{i}] {m['title']} (version {m['version']}, effective {m['effective_date'] or 'n/a'}, status: {m['status']})"
-        else:
-            header = f"[{i}] {m['title']}"
+        header = f"[{i}] {m['title']} (version {m['version']}, effective {m['effective_date'] or 'n/a'}, status: {m['status']})"
         blocks.append(f"{header}\n{h['text']}")
     return "Context:\n\n" + "\n\n".join(blocks) + f"\n\nQuestion: {question}\nAnswer:"
 
@@ -135,14 +101,16 @@ def generate(question: str, hits: list[dict], cfg: RAGConfig) -> tuple[str, str]
         as_type="generation", name="generate-response", model=cfg.model, input=messages,
         model_parameters=params, prompt=prompt_client,
     ) as gen:
-        for attempt in range(4):
+        for attempt in range(8):
             try:
                 resp = config.groq_client().chat.completions.create(model=cfg.model, messages=messages, **params)
                 break
-            except Exception:
-                if attempt == 3:
+            except (RateLimitError, APIConnectionError, APITimeoutError, InternalServerError) as e:
+                if attempt == 7:
                     raise
-                time.sleep(2 ** attempt * 2)  # rate limit / transient error
+                # rate limit / transient error; Groq's 429 says "try again in 5.7s", so wait at least that long
+                hinted = re.search(r"try again in ([\d.]+)s", str(e))
+                time.sleep(max(2 ** min(attempt, 4) * 2, float(hinted.group(1)) + 1 if hinted else 0))
         msg = resp.choices[0].message
         text = (msg.content or "").strip()
         reasoning = (msg.model_extra or {}).get("reasoning") or ""
@@ -192,7 +160,7 @@ def config_attributes(cfg: RAGConfig, run_id: str, session_id: str | None, env: 
         version=cfg.prompt_label,
         tags=["rag", cfg.name],
         metadata={"run_id": run_id, "config": cfg.name, "k": str(cfg.k), "collection": cfg.collection,
-                  "model": cfg.model, "prompt_label": cfg.prompt_label, "retrieval": cfg.retrieval},
+                  "model": cfg.model, "prompt_label": cfg.prompt_label},
     )
 
 

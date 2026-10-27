@@ -20,7 +20,7 @@ GROQ_MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "gemini-embedding-001")
 JUDGE_MODEL = os.getenv("JUDGE_MODEL", "gemini-flash-lite-latest")
 
-# Baseline RAG settings (varied in Phase 8 experiments)
+# RAG settings
 CHUNK_TOKENS = 200
 CHUNK_OVERLAP = 30
 TOP_K = 4

@@ -1,7 +1,0 @@
-{
-  "faithfulness": 0.80,
-  "answer_relevancy": 0.70,
-  "context_recall": 0.70,
-  "expected_behavior": 0.70,
-  "pii_leak": 0.0
-}

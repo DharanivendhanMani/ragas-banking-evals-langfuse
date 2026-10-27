@@ -15,8 +15,8 @@ if __name__ == "__main__":
     rows = [json.loads(l) for l in (config.ROOT / "data" / "golden" / "golden_v1.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
     lf.create_dataset(
         name=DATASET,
-        description="100 synthetic Northbridge Bank questions: 40 single-fact, 15 multi-chunk, 12 table/numeric, "
-                    "12 version/conflict, 10 unanswerable, 7 adversarial, 4 ambiguous. 70 dev / 30 test.",
+        description=f"{len(rows)} synthetic Northbridge Bank questions across single-fact, multi-chunk, table/numeric, "
+                    "version/conflict, unanswerable, adversarial and ambiguous categories.",
         metadata={"version": "v1", "corpus": "synthetic Northbridge Bank", "frozen": "true"},
     )
     for r in rows:

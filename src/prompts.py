@@ -13,9 +13,4 @@ Rules:
 
 PROMPTS = {
     "baseline-v1": _BASE,
-    "conflict-aware-v2": _BASE + """
-- Context excerpts show a document version, effective date, and status. When excerpts disagree, prefer the one with status "current" and the most recent effective date, and never quote values from a superseded document.
-- If two current excerpts contradict each other and you cannot tell which is correct, say so explicitly, give both values, and recommend confirming with customer service.
-- If the question is too vague to answer (for example it does not say which product or fee), ask a short clarifying question instead of guessing.
-- If the question is unrelated to Northbridge Bank products and services, politely say you can only help with banking questions.""",
 }

@@ -1,0 +1,810 @@
+golden_id,category,question,reference,response,retrieved_context,correct,faithful,notes
+g001,single_fact,What is the minimum opening deposit for a Premier Checking account?,$100.,The minimum opening deposit for a Premier Checking account is **$100**.,"[1]  Opening an Account
+
+To open a personal account you must be at least 18 years old (except Student Checking, see above) and complete identity verification as described in the KYC Requirements document.
+
+Minimum opening deposits:
+
+- Everyday Checking: $25
+- Premier Checking: $100
+- Student Checking: $0
+- Basic Savings: $50
+- High-Yield Savings: $500
+
+## 3. Deposits and Funds Availability
+
+- **Direct deposits** are available on the business day we receive them.
+- **Cash deposited** at a branch teller is available immediately.
+- **Checks**: the first $225 of a check deposit is available on the next business day. The remainder is generally available on the second business day after the deposit.
+- **Mobile check deposit** limits are $5,000 per day and $10,000 per rolling 30 days. Checks deposited through the mobile app before 8:00 PM Eastern Time are generally available on the next business day
+
+----
+
+[2]  day.
+
+## 3. Fees
+
+- Domestic outgoing wire: **$25**
+- International outgoing wire: **$45** (some intermediary or receiving banks may deduct additional charges)
+- Incoming domestic wire: **$15**
+- Incoming international wire: **$20**
+
+## 4. Daily Limits
+
+| Channel | Everyday Checking | Premier Checking |
+|---|---|---|
+| Online / mobile banking | $25,000 per day | $100,000 per day |
+| Branch | $100,000 per day | $250,000 per day |
+
+Higher limits may be available on request with additional verification. Limits may be reduced on newly opened accounts (under 30 days).
+
+## 5. Information Required to Send a Wire
+
+For all wires: the beneficiary's full name and address, the beneficiary's account number, and the receiving bank's name.
+
+- **Domestic**: the receiving bank's 9-digit ABA routing number.
+- **International**: the receiving bank
+
+----
+
+[3] Northbridge Bank Personal Fee Schedule
+Effective March 1, 2024 | Version 2024.1
+Monthly Maintenance Fees
+Account
+Monthly fee
+Fee waived if (any one)
+Notes
+Everyday Checking
+$12
+Min. daily balance $1,500, OR
+monthly direct deposits $500+
+1
+Premier Checking
+$25
+Combined Northbridge balances
+of $15,000+
+2
+Student Checking
+$0
+n/a
+3
+Basic Savings
+$5
+Min. daily balance $300
+High-Yield Savings
+$0
+n/a
+Transaction and Service Fees
+Category
+Service
+Fee
+Notes
+Overdraft
+Overdraft item fee (max 3 per day)
+$34
+4
+Non-sufficient funds (returned item)
+$34
+4
+Overdraft Protection transfer
+$10
+Wires
+Outgoing domestic
+$25
+Outgoing international
+$45
+5
+Incoming domestic
+$15
+
+
+----
+
+[4] ,000 per rolling 30 days. Checks deposited through the mobile app before 8:00 PM Eastern Time are generally available on the next business day.
+- A hold of up to 7 business days may be placed on new accounts (open less than 30 days), large deposits over $5,525 in a single day, or checks that appear questionable.
+
+## 4. Savings Withdrawal Limits
+
+Savings accounts are limited to six outgoing transfers or withdrawals (online, phone, or automatic) per monthly statement cycle. Additional requests may be declined. Withdrawals made in person at a branch or ATM are not counted toward this limit.
+
+## 5. Inactive and Dormant Accounts
+
+- An account with no customer-initiated activity for 12 months is classified as **inactive**.
+- After 24 months of no activity, the account is classified as **dormant**, and we will attempt to contact you.
+- If an account remains dormant for 36 months total and we",,,
+g002,single_fact,How much do I need to open a High-Yield Savings account?,$500.,You need a minimum opening deposit of **$500** to open a High‑Yield Savings account.,"[1]  Opening an Account
+
+To open a personal account you must be at least 18 years old (except Student Checking, see above) and complete identity verification as described in the KYC Requirements document.
+
+Minimum opening deposits:
+
+- Everyday Checking: $25
+- Premier Checking: $100
+- Student Checking: $0
+- Basic Savings: $50
+- High-Yield Savings: $500
+
+## 3. Deposits and Funds Availability
+
+- **Direct deposits** are available on the business day we receive them.
+- **Cash deposited** at a branch teller is available immediately.
+- **Checks**: the first $225 of a check deposit is available on the next business day. The remainder is generally available on the second business day after the deposit.
+- **Mobile check deposit** limits are $5,000 per day and $10,000 per rolling 30 days. Checks deposited through the mobile app before 8:00 PM Eastern Time are generally available on the next business day
+
+----
+
+[2] # Northbridge Bank Savings and Certificate of Deposit (CD) Rates
+
+Rates effective July 1, 2024 | Version 2024-07
+
+## 1. Savings Accounts (variable rates)
+
+| Account | Balance tier | APY |
+|---|---|---|
+| Basic Savings | All balances | 0.40% |
+| High-Yield Savings | Less than $1,000 | 0.50% |
+| High-Yield Savings | $1,000 and above | 4.15% |
+
+Savings rates are variable and may change at any time without notice. Interest is compounded daily and credited monthly.
+
+## 2. Certificates of Deposit (fixed rates)
+
+| Term | APY | Minimum deposit |
+|---|---|---|
+| 3 months | 3.80% | $1,000 |
+| 6 months | 4.25% | $1,000 |
+| 12 months | 4.50%
+
+----
+
+[3] ,000 per rolling 30 days. Checks deposited through the mobile app before 8:00 PM Eastern Time are generally available on the next business day.
+- A hold of up to 7 business days may be placed on new accounts (open less than 30 days), large deposits over $5,525 in a single day, or checks that appear questionable.
+
+## 4. Savings Withdrawal Limits
+
+Savings accounts are limited to six outgoing transfers or withdrawals (online, phone, or automatic) per monthly statement cycle. Additional requests may be declined. Withdrawals made in person at a branch or ATM are not counted toward this limit.
+
+## 5. Inactive and Dormant Accounts
+
+- An account with no customer-initiated activity for 12 months is classified as **inactive**.
+- After 24 months of no activity, the account is classified as **dormant**, and we will attempt to contact you.
+- If an account remains dormant for 36 months total and we
+
+----
+
+[4] # Northbridge Bank Deposit Account Terms and Conditions
+
+Version 3.0 | Effective January 1, 2024
+
+## 1. Account Types
+
+Northbridge Bank offers the following personal deposit accounts:
+
+- **Everyday Checking**: a standard checking account for daily banking.
+- **Premier Checking**: a checking account for customers with higher balances, with enhanced limits and benefits.
+- **Student Checking**: for customers aged 16 to 24 with proof of enrollment. Customers under 18 must open the account jointly with a parent or legal guardian.
+- **Basic Savings**: a savings account with a variable interest rate.
+- **High-Yield Savings**: a tiered-rate savings account. See the Savings and CD Rates document for current rates.
+
+Monthly maintenance fees and the ways to waive them are listed in the Fee Schedule.
+
+## 2. Opening an Account
+
+To open a personal account you must be at least 18 years old (except Student Checking, see above) and complete identity verification",,,
+g003,single_fact,What are the mobile check deposit limits?,"$5,000 per day and $10,000 per rolling 30 days.","The mobile check deposit limits are **$5,000 per day** and **$10,000 per rolling 30‑day period**.","[1] ,000 per rolling 30 days. Checks deposited through the mobile app before 8:00 PM Eastern Time are generally available on the next business day.
+- A hold of up to 7 business days may be placed on new accounts (open less than 30 days), large deposits over $5,525 in a single day, or checks that appear questionable.
+
+## 4. Savings Withdrawal Limits
+
+Savings accounts are limited to six outgoing transfers or withdrawals (online, phone, or automatic) per monthly statement cycle. Additional requests may be declined. Withdrawals made in person at a branch or ATM are not counted toward this limit.
+
+## 5. Inactive and Dormant Accounts
+
+- An account with no customer-initiated activity for 12 months is classified as **inactive**.
+- After 24 months of no activity, the account is classified as **dormant**, and we will attempt to contact you.
+- If an account remains dormant for 36 months total and we
+
+----
+
+[2]  branch with photo ID.
+
+## How long does a mobile check deposit take to become available?
+
+Checks deposited through the mobile app before 8:00 PM ET are generally available on the next business day.
+
+## When will my mobile deposit be available?
+
+Mobile deposits are typically available within 1 to 2 business days. Deposits made after 8:00 PM ET or on weekends are treated as received on the next business day.
+
+## When will funds from my mobile check deposit show in my account?
+
+Funds from mobile deposits are usually available by the second business day. Large deposits or new accounts may be held longer.
+
+## How do I report a lost or stolen debit card?
+
+Lock your card in the mobile app, then call card services at 1-800-555-0142, available 24 hours a day, 7 days a week.
+
+## What number do I call if my card is lost?
+
+Call 1-800-555-0142 any time of day. You
+
+----
+
+[3]  Opening an Account
+
+To open a personal account you must be at least 18 years old (except Student Checking, see above) and complete identity verification as described in the KYC Requirements document.
+
+Minimum opening deposits:
+
+- Everyday Checking: $25
+- Premier Checking: $100
+- Student Checking: $0
+- Basic Savings: $50
+- High-Yield Savings: $500
+
+## 3. Deposits and Funds Availability
+
+- **Direct deposits** are available on the business day we receive them.
+- **Cash deposited** at a branch teller is available immediately.
+- **Checks**: the first $225 of a check deposit is available on the next business day. The remainder is generally available on the second business day after the deposit.
+- **Mobile check deposit** limits are $5,000 per day and $10,000 per rolling 30 days. Checks deposited through the mobile app before 8:00 PM Eastern Time are generally available on the next business day
+
+----
+
+[4] # Northbridge Bank Customer FAQ
+
+Compiled from support tickets | Last updated: various
+
+## How do I reset my online banking password?
+
+Go to the login page and select ""Forgot password"". Enter your username and we will send a verification code to your phone on file. Enter the code and choose a new password with at least 12 characters.
+
+## How can I reset my password for online banking?
+
+On the sign-in screen tap ""Forgot your password?"" and follow the steps. A one-time code is sent to your registered phone or email. Your new password must be at least 10 characters long and include a number.
+
+## I forgot my online banking password. What do I do?
+
+Select ""Forgot password"" on the login page. You'll receive a code by text message. If you no longer have access to your phone number, visit a branch with photo ID.
+
+## How long does a mobile check deposit take to become available?
+
+Checks deposited through the mobile app before 8:00 PM",,,
+g004,single_fact,How much of a check deposit is available on the next business day?,The first $225; the remainder is generally available on the second business day.,The first $225 of a check deposit is available on the next business day.,"[1]  Opening an Account
+
+To open a personal account you must be at least 18 years old (except Student Checking, see above) and complete identity verification as described in the KYC Requirements document.
+
+Minimum opening deposits:
+
+- Everyday Checking: $25
+- Premier Checking: $100
+- Student Checking: $0
+- Basic Savings: $50
+- High-Yield Savings: $500
+
+## 3. Deposits and Funds Availability
+
+- **Direct deposits** are available on the business day we receive them.
+- **Cash deposited** at a branch teller is available immediately.
+- **Checks**: the first $225 of a check deposit is available on the next business day. The remainder is generally available on the second business day after the deposit.
+- **Mobile check deposit** limits are $5,000 per day and $10,000 per rolling 30 days. Checks deposited through the mobile app before 8:00 PM Eastern Time are generally available on the next business day
+
+----
+
+[2] ,000 per rolling 30 days. Checks deposited through the mobile app before 8:00 PM Eastern Time are generally available on the next business day.
+- A hold of up to 7 business days may be placed on new accounts (open less than 30 days), large deposits over $5,525 in a single day, or checks that appear questionable.
+
+## 4. Savings Withdrawal Limits
+
+Savings accounts are limited to six outgoing transfers or withdrawals (online, phone, or automatic) per monthly statement cycle. Additional requests may be declined. Withdrawals made in person at a branch or ATM are not counted toward this limit.
+
+## 5. Inactive and Dormant Accounts
+
+- An account with no customer-initiated activity for 12 months is classified as **inactive**.
+- After 24 months of no activity, the account is classified as **dormant**, and we will attempt to contact you.
+- If an account remains dormant for 36 months total and we
+
+----
+
+[3]  branch with photo ID.
+
+## How long does a mobile check deposit take to become available?
+
+Checks deposited through the mobile app before 8:00 PM ET are generally available on the next business day.
+
+## When will my mobile deposit be available?
+
+Mobile deposits are typically available within 1 to 2 business days. Deposits made after 8:00 PM ET or on weekends are treated as received on the next business day.
+
+## When will funds from my mobile check deposit show in my account?
+
+Funds from mobile deposits are usually available by the second business day. Large deposits or new accounts may be held longer.
+
+## How do I report a lost or stolen debit card?
+
+Lock your card in the mobile app, then call card services at 1-800-555-0142, available 24 hours a day, 7 days a week.
+
+## What number do I call if my card is lost?
+
+Call 1-800-555-0142 any time of day. You
+
+----
+
+[4]  called Next-Day Grace.
+
+## 5. Overdraft Protection Options
+
+You can link a savings account, or a Northbridge credit card, to your checking account. Linked savings accounts are used first to cover overdrafts, for a $10 transfer fee per transfer (see Section 3).
+
+## 6. Continuing Negative Balances
+
+If your account stays overdrawn for **30 consecutive days**, Northbridge Bank may close the account and report it to a consumer reporting agency. You remain responsible for repaying the balance.
+
+## 7. How Transactions Are Posted
+
+We post deposits first, then withdrawals in the order they are received (not largest to smallest). Pending transactions reduce your available balance immediately.
+",,,
+g005,single_fact,After how long without activity is an account classified as dormant?,After 24 months of no activity.,An account is classified as **dormant after 24 months** of no customer‑initiated activity.,"[1]  account is classified as **dormant**, and we will attempt to contact you.
+- If an account remains dormant for 36 months total and we cannot reach you, the balance may be transferred to the state as unclaimed property (escheatment), as required by law.
+
+## 6. Closing an Account
+
+You may close an account at any time by visiting a branch or calling customer service. If you close an account within 90 days of opening, an early closure fee applies (see the Fee Schedule). Any remaining balance is returned by check or transfer within 10 business days. Northbridge Bank may close an account with 30 days' written notice, or immediately in cases of suspected fraud or misuse.
+
+## 7. Joint Accounts
+
+Each joint owner has full authority to deposit, withdraw, and close the account. Each joint owner is jointly and severally liable for any overdrafts or fees.
+
+
+----
+
+[2] ,000 per rolling 30 days. Checks deposited through the mobile app before 8:00 PM Eastern Time are generally available on the next business day.
+- A hold of up to 7 business days may be placed on new accounts (open less than 30 days), large deposits over $5,525 in a single day, or checks that appear questionable.
+
+## 4. Savings Withdrawal Limits
+
+Savings accounts are limited to six outgoing transfers or withdrawals (online, phone, or automatic) per monthly statement cycle. Additional requests may be declined. Withdrawals made in person at a branch or ATM are not counted toward this limit.
+
+## 5. Inactive and Dormant Accounts
+
+- An account with no customer-initiated activity for 12 months is classified as **inactive**.
+- After 24 months of no activity, the account is classified as **dormant**, and we will attempt to contact you.
+- If an account remains dormant for 36 months total and we
+
+----
+
+[3]  week.
+
+## What number do I call if my card is lost?
+
+Call 1-800-555-0142 any time of day. You can also report it in the mobile app or at a branch.
+
+## What should I do if my debit card is stolen?
+
+Call card services at 1-800-555-0149 as soon as possible and we will block the card and send a replacement within 5 to 7 business days.
+
+## How do I update my mailing address?
+
+Sign in to online banking, go to Profile > Contact Information, and update your address. A confirmation letter is mailed to both the old and new addresses.
+
+## How can I change my address on file?
+
+You can change your address in the mobile app under Settings > Personal Info. For security reasons, a change of address may require additional ID verification.
+
+## Can I get a paper statement?
+
+Yes. Statements are electronic by default. You can request paper statements in Settings > Statements. A monthly paper statement
+
+----
+
+[4]  Opening an Account
+
+To open a personal account you must be at least 18 years old (except Student Checking, see above) and complete identity verification as described in the KYC Requirements document.
+
+Minimum opening deposits:
+
+- Everyday Checking: $25
+- Premier Checking: $100
+- Student Checking: $0
+- Basic Savings: $50
+- High-Yield Savings: $500
+
+## 3. Deposits and Funds Availability
+
+- **Direct deposits** are available on the business day we receive them.
+- **Cash deposited** at a branch teller is available immediately.
+- **Checks**: the first $225 of a check deposit is available on the next business day. The remainder is generally available on the second business day after the deposit.
+- **Mobile check deposit** limits are $5,000 per day and $10,000 per rolling 30 days. Checks deposited through the mobile app before 8:00 PM Eastern Time are generally available on the next business day",,,
+g006,single_fact,How many outgoing transfers can I make from a savings account each statement cycle?,"Six outgoing transfers or withdrawals (online, phone, or automatic) per monthly statement cycle.",You can make up to **six outgoing transfers or withdrawals** from a savings account each monthly statement cycle.,"[1] ,000 per rolling 30 days. Checks deposited through the mobile app before 8:00 PM Eastern Time are generally available on the next business day.
+- A hold of up to 7 business days may be placed on new accounts (open less than 30 days), large deposits over $5,525 in a single day, or checks that appear questionable.
+
+## 4. Savings Withdrawal Limits
+
+Savings accounts are limited to six outgoing transfers or withdrawals (online, phone, or automatic) per monthly statement cycle. Additional requests may be declined. Withdrawals made in person at a branch or ATM are not counted toward this limit.
+
+## 5. Inactive and Dormant Accounts
+
+- An account with no customer-initiated activity for 12 months is classified as **inactive**.
+- After 24 months of no activity, the account is classified as **dormant**, and we will attempt to contact you.
+- If an account remains dormant for 36 months total and we
+
+----
+
+[2]  transfer
+$10
+Wires
+Outgoing domestic
+$25
+Outgoing international
+$45
+5
+Incoming domestic
+$15
+Incoming international
+$20
+ATM / Card
+Out-of-network ATM (U.S.)
+$3.00
+6
+ATM outside the U.S.
+$5.00
+6
+Card replacement - standard
+Free
+Card replacement - expedited
+$25
+Other
+Stop payment
+$30
+Cashier's check
+$10
+Paper statement (monthly)
+$3
+7
+Account closed within 90 days of opening
+$25
+1. The $500 direct deposit threshold counts total qualifying electronic deposits in the statement cycle.
+2. Combined balances include checking, savings, CDs and money held in Northbridge investment accounts.
+3. Student Checking requires proof of enrollment; fee-free until the account holder turns 25.
+4. No more than three overdraft/NSF fees per business day. No fee if over
+
+----
+
+[3]  day.
+
+## 3. Fees
+
+- Domestic outgoing wire: **$25**
+- International outgoing wire: **$45** (some intermediary or receiving banks may deduct additional charges)
+- Incoming domestic wire: **$15**
+- Incoming international wire: **$20**
+
+## 4. Daily Limits
+
+| Channel | Everyday Checking | Premier Checking |
+|---|---|---|
+| Online / mobile banking | $25,000 per day | $100,000 per day |
+| Branch | $100,000 per day | $250,000 per day |
+
+Higher limits may be available on request with additional verification. Limits may be reduced on newly opened accounts (under 30 days).
+
+## 5. Information Required to Send a Wire
+
+For all wires: the beneficiary's full name and address, the beneficiary's account number, and the receiving bank's name.
+
+- **Domestic**: the receiving bank's 9-digit ABA routing number.
+- **International**: the receiving bank
+
+----
+
+[4] $34** per item.
+- **Maximum of 3 overdraft fees per business day** ($102 total).
+- **Non-sufficient funds (NSF) fee**: $34 when we decline and return a check or ACH payment. NSF fees count towards the daily maximum of three combined overdraft and NSF fees.
+- **Overdraft Protection transfer fee**: **$10** each time we transfer funds from a linked savings account to cover an overdraft.
+
+## 4. Situations Where No Fee Is Charged
+
+- If your account is overdrawn by **$10 or less** at the end of the business day.
+- If you bring your account to a positive balance by the **end of the next business day** (11:59 PM Eastern Time), we automatically refund the overdraft fees from that day. This is called Next-Day Grace.
+
+## 5. Overdraft Protection Options
+
+You can link a savings account, or a Northbridge credit card, to your",,,
+g007,single_fact,How soon do I get my remaining balance back after closing an account?,"Within 10 business days, by check or transfer.",Your remaining balance will be returned by check or transfer within 10 business days after you close the account.,"[1]  account is classified as **dormant**, and we will attempt to contact you.
+- If an account remains dormant for 36 months total and we cannot reach you, the balance may be transferred to the state as unclaimed property (escheatment), as required by law.
+
+## 6. Closing an Account
+
+You may close an account at any time by visiting a branch or calling customer service. If you close an account within 90 days of opening, an early closure fee applies (see the Fee Schedule). Any remaining balance is returned by check or transfer within 10 business days. Northbridge Bank may close an account with 30 days' written notice, or immediately in cases of suspected fraud or misuse.
+
+## 7. Joint Accounts
+
+Each joint owner has full authority to deposit, withdraw, and close the account. Each joint owner is jointly and severally liable for any overdrafts or fees.
+
+
+----
+
+[2]  called Next-Day Grace.
+
+## 5. Overdraft Protection Options
+
+You can link a savings account, or a Northbridge credit card, to your checking account. Linked savings accounts are used first to cover overdrafts, for a $10 transfer fee per transfer (see Section 3).
+
+## 6. Continuing Negative Balances
+
+If your account stays overdrawn for **30 consecutive days**, Northbridge Bank may close the account and report it to a consumer reporting agency. You remain responsible for repaying the balance.
+
+## 7. How Transactions Are Posted
+
+We post deposits first, then withdrawals in the order they are received (not largest to smallest). Pending transactions reduce your available balance immediately.
+
+
+----
+
+[3] ,000 per rolling 30 days. Checks deposited through the mobile app before 8:00 PM Eastern Time are generally available on the next business day.
+- A hold of up to 7 business days may be placed on new accounts (open less than 30 days), large deposits over $5,525 in a single day, or checks that appear questionable.
+
+## 4. Savings Withdrawal Limits
+
+Savings accounts are limited to six outgoing transfers or withdrawals (online, phone, or automatic) per monthly statement cycle. Additional requests may be declined. Withdrawals made in person at a branch or ATM are not counted toward this limit.
+
+## 5. Inactive and Dormant Accounts
+
+- An account with no customer-initiated activity for 12 months is classified as **inactive**.
+- After 24 months of no activity, the account is classified as **dormant**, and we will attempt to contact you.
+- If an account remains dormant for 36 months total and we
+
+----
+
+[4]  Opening an Account
+
+To open a personal account you must be at least 18 years old (except Student Checking, see above) and complete identity verification as described in the KYC Requirements document.
+
+Minimum opening deposits:
+
+- Everyday Checking: $25
+- Premier Checking: $100
+- Student Checking: $0
+- Basic Savings: $50
+- High-Yield Savings: $500
+
+## 3. Deposits and Funds Availability
+
+- **Direct deposits** are available on the business day we receive them.
+- **Cash deposited** at a branch teller is available immediately.
+- **Checks**: the first $225 of a check deposit is available on the next business day. The remainder is generally available on the second business day after the deposit.
+- **Mobile check deposit** limits are $5,000 per day and $10,000 per rolling 30 days. Checks deposited through the mobile app before 8:00 PM Eastern Time are generally available on the next business day",,,
+g008,single_fact,How long do I have to report an unauthorized card transaction?,Within 60 days of the statement date on which the transaction first appeared.,You must report an unauthorized or incorrect card transaction within **60 days** of the statement date on which the transaction first appeared.,"[1]  must report an unauthorized or incorrect transaction within **60 days** of the statement date on which the transaction first appeared.
+- Disputes reported after 60 days may still be reviewed, but protections are not guaranteed.
+
+## 4. Customer Liability
+
+Northbridge Zero Liability Protection applies to unauthorized card transactions reported within the 60-day window: you are not responsible for them.
+
+For unauthorized debit card transactions made using a PIN, federal Regulation E rules apply:
+
+- Reported within 2 business days of learning of the loss: maximum liability **$50**.
+- Reported after 2 business days but within 60 days of the statement: maximum liability **$500**.
+- Reported later than 60 days after the statement: you may be liable for the full amount of transactions occurring after the 60-day period.
+
+## 5. Provisional Credit and Investigation Timeline
+
+**Debit cards**
+
+- We acknowledge your dispute immediately and begin an investigation.
+- If the investigation is not complete within **5
+
+----
+
+[2] # Northbridge Bank Card Dispute and Unauthorized Transaction Policy
+
+Version 2.1 | Effective January 1, 2024
+
+## 1. Scope
+
+This policy covers disputes on Northbridge debit cards and credit cards, including unauthorized transactions, billing errors, and merchant disputes.
+
+## 2. How to Report
+
+Report a lost, stolen, or compromised card immediately:
+
+- Lock the card instantly in the mobile app (Cards > Lock Card).
+- Call the 24/7 card services line at 1-800-555-0142.
+- Visit any branch.
+
+To dispute a transaction, call card services, use the app (Transactions > Report a Problem), or write to Northbridge Bank Disputes, PO Box 4100, Columbus, OH 43216.
+
+## 3. Time Limits for Reporting
+
+- You must report an unauthorized or incorrect transaction within **60 days** of the statement date on which the transaction first appeared.
+- Disputes reported after 
+
+----
+
+[3]  suspect it, call the fraud line right away so we can freeze online access and issue new credentials.
+
+## I sent money to a scammer using NB Send (our person-to-person payments service). Can I get it back?
+
+Payments you authorize yourself, even when you were tricked, are generally not covered by Zero Liability Protection because they are not ""unauthorized."" Report the payment immediately; we will try to contact the receiving bank, but recovery is not guaranteed. Wire transfers are final once sent.
+
+## How long does a fraud investigation take?
+
+We review unauthorized transaction reports and confirm next steps within 10 business days. Provisional credit timelines for card disputes are described in the Card Dispute Policy.
+
+## How can I protect my accounts?
+
+Use a unique password, enable multi-factor authentication (MFA) in Settings > Security, keep your contact information current, review your statements monthly, and never share verification codes.
+
+## Does Northbridge Bank call customers about fraud?
+
+Yes, but our fraud team will
+
+----
+
+[4]  and Investigation Timeline
+
+**Debit cards**
+
+- We acknowledge your dispute immediately and begin an investigation.
+- If the investigation is not complete within **5 business days**, we issue a provisional credit for the disputed amount so that you can use the funds.
+- We complete the investigation within **45 calendar days**. This extends to **90 calendar days** for new accounts (open less than 30 days), point-of-sale transactions, and transactions initiated outside the United States.
+- If we find no error, we notify you in writing and reverse the provisional credit after giving 5 business days' notice.
+
+**Credit cards**
+
+- We acknowledge a written billing error notice within **30 days**.
+- We resolve the dispute within **two billing cycles**, and never later than **90 days**.
+- You do not have to pay the disputed amount or related finance charges while the dispute is open.
+
+## 6. Merchant Disputes
+
+For goods not received, services not rendered, or defective goods,",,,
+g009,single_fact,"If my debit card PIN was used without my permission and I report it within 2 business days, what is my maximum liability?",$50.,"If you report the unauthorized debit‑card PIN transaction within 2 business days, your maximum liability is **$50**.","[1]  must report an unauthorized or incorrect transaction within **60 days** of the statement date on which the transaction first appeared.
+- Disputes reported after 60 days may still be reviewed, but protections are not guaranteed.
+
+## 4. Customer Liability
+
+Northbridge Zero Liability Protection applies to unauthorized card transactions reported within the 60-day window: you are not responsible for them.
+
+For unauthorized debit card transactions made using a PIN, federal Regulation E rules apply:
+
+- Reported within 2 business days of learning of the loss: maximum liability **$50**.
+- Reported after 2 business days but within 60 days of the statement: maximum liability **$500**.
+- Reported later than 60 days after the statement: you may be liable for the full amount of transactions occurring after the 60-day period.
+
+## 5. Provisional Credit and Investigation Timeline
+
+**Debit cards**
+
+- We acknowledge your dispute immediately and begin an investigation.
+- If the investigation is not complete within **5
+
+----
+
+[2] 
+
+If you forget your PIN, you can reset it in the mobile app or at a branch with photo ID.
+
+## 6. Card Security Controls
+
+New in this version: you can set custom per-transaction limits and disable international or online use of your debit card in the app under Cards > Controls.
+
+
+----
+
+[3] $2.50** per transaction, plus any fee charged by the ATM owner.
+- ATMs outside the United States: $5.00 per transaction.
+- Balance inquiry at an out-of-network ATM: $1.00.
+
+## 3. Card Replacement
+
+Standard replacement of a damaged card is free. Expedited replacement (delivery within 2 business days) costs $20.
+
+## 4. Requesting Higher Limits
+
+You may request a temporary increase to your ATM withdrawal limit at any branch. Increases are valid for up to 7 days and are subject to approval.
+
+## 5. Lost PIN
+
+If you forget your PIN, you can reset it in the mobile app or at a branch with photo ID.
+
+
+----
+
+[4]  fee.
+- Other (out-of-network) ATMs in the United States: **$3.00** per transaction, plus any fee charged by the ATM owner.
+- ATMs outside the United States: **$5.00** per transaction, plus a 1% foreign currency conversion charge.
+- Balance inquiry at an out-of-network ATM: $1.00.
+
+## 3. Card Replacement
+
+Standard replacement of a damaged card is free. Expedited replacement (delivery within 2 business days) costs $25.
+
+## 4. Requesting Higher Limits
+
+You may request a temporary increase to your ATM withdrawal limit through the mobile app or at any branch. Increases are valid for up to 14 days and are subject to approval. Increases above $2,500 require branch verification with photo ID.
+
+## 5. Lost PIN
+
+If you forget your PIN, you can reset it in the mobile app or at a branch with photo ID.
+
+## 6. Card Security Controls",,,
+g010,single_fact,How long does a replacement card take after I report mine lost or stolen?,5 to 7 business days.,A replacement card arrives in **5 to 7 business days** after you report it lost or stolen.,"[1]  week.
+
+## What number do I call if my card is lost?
+
+Call 1-800-555-0142 any time of day. You can also report it in the mobile app or at a branch.
+
+## What should I do if my debit card is stolen?
+
+Call card services at 1-800-555-0149 as soon as possible and we will block the card and send a replacement within 5 to 7 business days.
+
+## How do I update my mailing address?
+
+Sign in to online banking, go to Profile > Contact Information, and update your address. A confirmation letter is mailed to both the old and new addresses.
+
+## How can I change my address on file?
+
+You can change your address in the mobile app under Settings > Personal Info. For security reasons, a change of address may require additional ID verification.
+
+## Can I get a paper statement?
+
+Yes. Statements are electronic by default. You can request paper statements in Settings > Statements. A monthly paper statement
+
+----
+
+[2]  finance charges while the dispute is open.
+
+## 6. Merchant Disputes
+
+For goods not received, services not rendered, or defective goods, first try to resolve the issue with the merchant. If that fails, file a dispute and include receipts, correspondence, and the dates you contacted the merchant. See the Chargeback Guide for how merchant chargebacks work.
+
+## 7. Replacement Cards
+
+After a card is reported lost or stolen, a replacement card arrives in 5 to 7 business days. Expedited delivery (1 to 2 business days) is available for a fee listed in the Fee Schedule.
+
+
+----
+
+[3]  branch with photo ID.
+
+## How long does a mobile check deposit take to become available?
+
+Checks deposited through the mobile app before 8:00 PM ET are generally available on the next business day.
+
+## When will my mobile deposit be available?
+
+Mobile deposits are typically available within 1 to 2 business days. Deposits made after 8:00 PM ET or on weekends are treated as received on the next business day.
+
+## When will funds from my mobile check deposit show in my account?
+
+Funds from mobile deposits are usually available by the second business day. Large deposits or new accounts may be held longer.
+
+## How do I report a lost or stolen debit card?
+
+Lock your card in the mobile app, then call card services at 1-800-555-0142, available 24 hours a day, 7 days a week.
+
+## What number do I call if my card is lost?
+
+Call 1-800-555-0142 any time of day. You
+
+----
+
+[4]  and Investigation Timeline
+
+**Debit cards**
+
+- We acknowledge your dispute immediately and begin an investigation.
+- If the investigation is not complete within **5 business days**, we issue a provisional credit for the disputed amount so that you can use the funds.
+- We complete the investigation within **45 calendar days**. This extends to **90 calendar days** for new accounts (open less than 30 days), point-of-sale transactions, and transactions initiated outside the United States.
+- If we find no error, we notify you in writing and reverse the provisional credit after giving 5 business days' notice.
+
+**Credit cards**
+
+- We acknowledge a written billing error notice within **30 days**.
+- We resolve the dispute within **two billing cycles**, and never later than **90 days**.
+- You do not have to pay the disputed amount or related finance charges while the dispute is open.
+
+## 6. Merchant Disputes
+
+For goods not received, services not rendered, or defective goods,",,,

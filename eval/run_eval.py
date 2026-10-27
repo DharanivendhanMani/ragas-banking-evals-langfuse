@@ -6,9 +6,9 @@
 
 Stages
   1. generate : answer every golden question with the chosen RAGConfig (traced in Langfuse, logged to logs/runs/<run_id>.jsonl)
-  2. score    : retrieval metrics (deterministic) + Ragas faithfulness / answer relevancy / context precision /
-                context recall / factual correctness + expected-behaviour check + PII-leak check
-  3. report   : reports/<run_id>_scores.csv, reports/<run_id>_summary.json (means + bootstrap 95% CIs, by category),
+  2. score    : Ragas faithfulness / answer relevancy / context precision / context recall, a custom answer-correctness
+                check, hit-rate (deterministic) and a PII-leak check
+  3. report   : reports/<run_id>_scores.csv, reports/<run_id>_summary.json (means, by category),
                 and the scores pushed to the Langfuse traces
 """
 import argparse
@@ -22,7 +22,6 @@ from dataclasses import replace
 import pandas as pd
 
 from eval.judge import Judge, with_retry
-from eval.stats import bootstrap_ci
 from src import config
 from src.logger import log_interaction
 from src.pii import redact
@@ -31,20 +30,16 @@ from src.rag import BASELINE, RAGConfig, answer, langfuse
 GOLDEN = config.ROOT / "data" / "golden" / "golden_v1.jsonl"
 RUNS_DIR = config.LOG_DIR / "runs"
 REPORTS = config.ROOT / "reports"
-BEHAVIOR_CATEGORIES = {"unanswerable", "adversarial", "ambiguous"}
 RAGAS_METRICS = ["faithfulness", "answer_relevancy", "context_precision", "context_recall"]
-ALL_METRICS = RAGAS_METRICS + ["answer_correctness", "expected_behavior", "hit_rate", "evidence_recall", "mrr",
-                               "stale_context", "pii_leak"]
+ALL_METRICS = RAGAS_METRICS + ["answer_correctness", "hit_rate", "pii_leak"]
 
 
-def _norm(text: str) -> str:
-    return re.sub(r"\s+", " ", text.replace("**", "")).strip()
-
-
-def load_golden(split: str, limit: int | None) -> list[dict]:
+def load_golden(split: str, limit: int | None, categories: list[str] | None = None) -> list[dict]:
     rows = [json.loads(line) for line in GOLDEN.read_text(encoding="utf-8").splitlines() if line.strip()]
     if split != "all":
         rows = [r for r in rows if r["split"] == split]
+    if categories:
+        rows = [r for r in rows if r["category"] in categories]
     return rows[:limit] if limit else rows
 
 
@@ -76,23 +71,9 @@ def generate_all(rows: list[dict], cfg: RAGConfig, run_id: str, workers: int, re
 
 # ---------------------------------------------------------------- stage 2: score
 def retrieval_metrics(row: dict, rec: dict) -> dict:
-    """Deterministic retrieval checks (no LLM):
-    hit_rate / mrr       doc-level: was a source document retrieved (and how high)?
-    evidence_recall      chunk-level: fraction of the gold evidence quotes present verbatim in the retrieved text.
-                         Stricter than hit_rate; a quote split across two chunks can read as a miss, so treat as a lower bound.
-    stale_context        was a superseded / wrong-version document retrieved?"""
-    retrieved_docs = [cid.split("::")[0] for cid in rec["chunk_ids"]]
-    out = {"hit_rate": None, "mrr": None, "evidence_recall": None, "stale_context": None}
-    if row["source_docs"]:
-        ranks = [i + 1 for i, d in enumerate(retrieved_docs) if d in row["source_docs"]]
-        out["hit_rate"] = 1.0 if ranks else 0.0
-        out["mrr"] = 1.0 / ranks[0] if ranks else 0.0
-    if row["evidence"]:
-        text = _norm(" ".join(rec["contexts"]))
-        out["evidence_recall"] = sum(_norm(q) in text for q in row["evidence"]) / len(row["evidence"])
-    if row["distractor_docs"]:
-        out["stale_context"] = 1.0 if any(d in row["distractor_docs"] for d in retrieved_docs) else 0.0
-    return out
+    """hit_rate (no LLM): was a source document for the question retrieved?"""
+    retrieved_docs = {cid.split("::")[0] for cid in rec["chunk_ids"]}
+    return {"hit_rate": (1.0 if retrieved_docs & set(row["source_docs"]) else 0.0) if row["source_docs"] else None}
 
 
 async def score_row(judge: Judge, row: dict, rec: dict, sem: asyncio.Semaphore) -> dict:
@@ -118,19 +99,12 @@ async def score_row(judge: Judge, row: dict, rec: dict, sem: asyncio.Semaphore) 
         run("context_precision", judge.context_precision.ascore, user_input=q, reference=ref, retrieved_contexts=ctx),
         run("context_recall", judge.context_recall.ascore, user_input=q, retrieved_contexts=ctx, reference=ref),
     ]
-    behavioral = row["category"] in BEHAVIOR_CATEGORIES or "inconsistent" in ref.lower()
-    if behavioral:
-        async def behavior():
-            verdict = await judge.behavior(q, ref, resp)
-            scores["behavior_reason"] = verdict.reason
-            return 1.0 if verdict.meets_expectation else 0.0
-        tasks.append(run("expected_behavior", behavior))
-    else:
-        async def correctness():
-            verdict = await judge.correctness(q, ref, resp)
-            scores["correctness_reason"] = verdict.reason
-            return 1.0 if verdict.correct else 0.0
-        tasks.append(run("answer_correctness", correctness))
+
+    async def correctness():
+        verdict = await judge.correctness(q, ref, resp)
+        scores["correctness_reason"] = verdict.reason
+        return 1.0 if verdict.correct else 0.0
+    tasks.append(run("answer_correctness", correctness))
     await asyncio.gather(*tasks)
     scores["errors"] = json.dumps(errors) if errors else ""
     return scores
@@ -138,7 +112,17 @@ async def score_row(judge: Judge, row: dict, rec: dict, sem: asyncio.Semaphore) 
 
 async def score_all(judge: Judge, rows: list[dict], recs: dict[str, dict], concurrency: int) -> list[dict]:
     sem = asyncio.Semaphore(concurrency)
-    return await asyncio.gather(*(score_row(judge, r, recs[r["id"]], sem) for r in rows))
+    done = 0
+
+    async def tracked(row):
+        nonlocal done
+        scores = await score_row(judge, row, recs[row["id"]], sem)
+        done += 1
+        failed = f"  ({len(json.loads(scores['errors']))} metric errors)" if scores["errors"] else ""
+        print(f"  scored {done}/{len(rows)}  {row['id']}{failed}", flush=True)
+        return scores
+
+    return await asyncio.gather(*(tracked(r) for r in rows))
 
 
 # ---------------------------------------------------------------- stage 3: report
@@ -147,8 +131,8 @@ def summarise(df: pd.DataFrame) -> dict:
         out = {}
         for m in ALL_METRICS:
             if m in frame and frame[m].notna().any():
-                mean, lo, hi = bootstrap_ci(frame[m].tolist())
-                out[m] = {"mean": round(mean, 4), "ci95": [round(lo, 4), round(hi, 4)], "n": int(frame[m].notna().sum())}
+                out[m] = {"mean": round(float(frame[m].mean()), 4), "n": int(frame[m].notna().sum()),
+                          "failed": int(frame[m].isna().sum())}
         return out
 
     return {"overall": block(df), "by_category": {c: block(g) for c, g in df.groupby("category")}}
@@ -166,9 +150,9 @@ def push_scores(df: pd.DataFrame) -> None:
 
 
 def print_summary(summary: dict) -> None:
-    print("\n=== overall (mean [95% CI], n) ===")
+    print("\n=== overall (mean, n) ===")
     for m, s in summary["overall"].items():
-        print(f"{m:20s} {s['mean']:.3f}  [{s['ci95'][0]:.3f}, {s['ci95'][1]:.3f}]  n={s['n']}")
+        print(f"{m:20s} {s['mean']:.3f}  n={s['n']}" + (f"  ({s['failed']} judge calls failed)" if s["failed"] else ""))
     print("\n=== by category (means) ===")
     cats = pd.DataFrame({c: {m: s["mean"] for m, s in b.items()} for c, b in summary["by_category"].items()}).round(2)
     print(cats.to_string())
@@ -176,9 +160,9 @@ def print_summary(summary: dict) -> None:
 
 def evaluate_run(run_id: str, cfg: RAGConfig, split: str = "dev", limit: int | None = None, reuse: bool = False,
                  workers: int = 4, concurrency: int = 6, judge_model: str = config.JUDGE_MODEL,
-                 push: bool = True) -> pd.DataFrame:
-    """Importable entry point (used by eval.experiments). Returns the per-question score frame."""
-    rows = load_golden(split, limit)
+                 push: bool = True, categories: list[str] | None = None) -> pd.DataFrame:
+    """Importable entry point. Returns the per-question score frame."""
+    rows = load_golden(split, limit, categories)
     print(f"[{run_id}] {len(rows)} questions | config={cfg.name} | judge={judge_model}")
     recs = generate_all(rows, cfg, run_id, workers, reuse)
     judge = Judge(judge_model)
