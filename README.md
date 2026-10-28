@@ -14,6 +14,10 @@ flowchart LR
     E --> S[reports/*.csv and scores on the traces]
 ```
 
+One request traced end to end in Langfuse (embed, retrieve, generate):
+
+![Langfuse trace](docs/langfuse-trace.jpg)
+
 | Role | Model |
 |---|---|
 | Chatbot | Groq `openai/gpt-oss-120b` |
